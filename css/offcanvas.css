@@ -1,0 +1,53 @@
+.offcanvas{
+    background-color: #D3DBE5;
+}
+
+.offcanvas-title{
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.offcanvas .btn-close{
+    background-color: red;
+    color: black;
+}
+
+.offcanvas .btn{
+	background-color: #68778B;
+	color: white;
+	font-weight: bold;
+}
+
+.offcanvas .btn:hover{
+	background-color: #D3DBE5;
+	color: black;
+}
+
+.offcanvas .nav-a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.offcanvas .nav-a:hover{
+    color: black;
+}
+
+
+.offcanvas .dropdown-item{
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: #D9DDE2;
+}
+
+.offcanvas .dropdown-item:hover{
+    background-color: #A1AAB7;
+    color: white;
+}
+
+
+.offcanvas .dropdown-menu{
+	background-color: #ECEEF1;
+}
