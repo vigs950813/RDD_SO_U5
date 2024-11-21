@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.2.4 E/S usando DMA</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -52,22 +52,89 @@
         <!-- Section 1 -->
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.2.4 E/S usando DMA</h5>
 
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                    </p>
+                    <p class="card-text">El <strong>acceso directo a memoria (DMA)</strong> es una técnica avanzada de
+                        gestión de operaciones de entrada/salida (E/S) que permite transferir datos directamente entre
+                        dispositivos periféricos y la memoria principal, sin la necesidad de intervención continua de la
+                        CPU. Esta técnica aborda las limitaciones de la E/S programada y por interrupciones, optimizando
+                        el uso de los recursos del sistema.</p>
+
+                    <p class="card-text">En el modelo DMA, un módulo controlador asume el control del bus del sistema
+                        para realizar las transferencias de datos. Este módulo incluye registros especializados que
+                        gestionan los datos, la dirección y el conteo de palabras necesarias para las operaciones de
+                        E/S. La CPU inicializa el proceso configurando estos registros, especificando la dirección de
+                        memoria, el número de palabras a transferir y el tipo de operación (lectura o escritura).
+                        Posteriormente, la tarea se delega al módulo DMA, permitiendo que la CPU continúe con otras
+                        actividades.</p>
+
+                    <table class="table card-text">
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Descripción</th>
+                                <th>Ventajas</th>
+                                <th>Desventajas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Control del Bus</td>
+                                <td>El módulo DMA toma control del bus para realizar transferencias directas entre
+                                    dispositivos y memoria.</td>
+                                <td>Elimina la intervención constante de la CPU, mejorando la eficiencia.</td>
+                                <td>Requiere arbitraje para evitar conflictos en el uso del bus.</td>
+                            </tr>
+                            <tr>
+                                <td>Registros del DMA</td>
+                                <td>Incluyen registros de datos, dirección y contador de palabras para gestionar las
+                                    transferencias.</td>
+                                <td>Permiten transferencias automáticas y precisas.</td>
+                                <td>Diseño más complejo del hardware del controlador.</td>
+                            </tr>
+                            <tr>
+                                <td>Modos de Operación</td>
+                                <td>Diversos modos como 'robo de ciclos' o 'ráfaga' ajustan el uso del bus según las
+                                    necesidades.</td>
+                                <td>Ofrecen flexibilidad para manejar diferentes volúmenes de datos.</td>
+                                <td>El modo 'ráfaga' puede dejar a la CPU inactiva durante períodos prolongados.</td>
+                            </tr>
+                            <tr>
+                                <td>Interrupción Final</td>
+                                <td>El DMA genera una interrupción para notificar a la CPU al finalizar una operación.
+                                </td>
+                                <td>Minimiza la supervisión de la CPU durante la transferencia.</td>
+                                <td>Requiere un manejo eficiente de interrupciones en el sistema operativo.</td>
+                            </tr>
+                            <tr>
+                                <td>Eficiencia en Grandes Transferencias</td>
+                                <td>Es ideal para mover grandes volúmenes de datos entre memoria y dispositivos.</td>
+                                <td>Incrementa significativamente el rendimiento del sistema.</td>
+                                <td>No es práctico para transferencias pequeñas o esporádicas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="card-text">En conclusión, el uso de DMA representa una solución eficiente para
+                        transferencias de datos en sistemas modernos, al permitir que la CPU se enfoque en otras tareas
+                        mientras el módulo DMA se encarga de la transferencia. Aunque su implementación requiere
+                        hardware especializado y un manejo adecuado de recursos, es una técnica fundamental para
+                        garantizar la eficiencia en sistemas con altas demandas de E/S.</p>
+
 
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="introduccion.html">Anterior</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a>
+                        </li>
                         <li class="page-item"><a class="page-link" href="5-2-2-e-s-programadas.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
                         <li class="page-item active"><a class="page-link" href="5-2-4-e-s-usando-dma.html">5</a></li>
                         <li class="page-item">
                             <a class="page-link" href="5-3-capas-de-software.html">Siguiente Tema</a>

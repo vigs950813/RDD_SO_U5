@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.2 Principios del software de E/S</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -52,22 +52,79 @@
         <!-- Section 1 -->
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.2 Principios del software de E/S</h5>
 
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                       </p>
+                    <p class="card-text">El software de entrada y salida (E/S) es una parte esencial de los sistemas
+                        operativos, encargado de gestionar la comunicación entre los dispositivos de hardware y el
+                        sistema. Este software se encarga de coordinar y controlar las operaciones de entrada y salida,
+                        asegurando una interacción eficiente entre los componentes del sistema.</p>
+
+                    <p class="card-text">El software de E/S incluye varios niveles, desde los controladores de
+                        dispositivos específicos hasta las interfaces de alto nivel utilizadas por los programas de
+                        usuario. Este enfoque jerárquico permite al sistema operativo abstraer las complejidades del
+                        hardware y ofrecer una interfaz uniforme para las aplicaciones.</p>
+
+                    <p class="card-text">Entre las funciones principales del software de E/S se encuentran el manejo de
+                        interrupciones, la administración de búferes, la gestión de errores y la sincronización de
+                        operaciones. Estas tareas son críticas para garantizar la confiabilidad y el rendimiento del
+                        sistema, especialmente en entornos donde múltiples dispositivos comparten los recursos del
+                        sistema.</p>
+
+                    <p class="card-text"><strong>Componentes y funciones del software de E/S:</strong></p>
+                    <table class="table card-text">
+                        <thead>
+                            <tr>
+                                <th>Componente</th>
+                                <th>Descripción</th>
+                                <th>Función Principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Controladores de Dispositivos</td>
+                                <td>Software específico para interactuar con hardware particular.</td>
+                                <td>Proporcionar comandos al hardware y gestionar respuestas.</td>
+                            </tr>
+                            <tr>
+                                <td>Manejadores de Interrupciones</td>
+                                <td>Rutinas encargadas de atender señales de interrupción generadas por dispositivos.
+                                </td>
+                                <td>Responder rápidamente a eventos del hardware.</td>
+                            </tr>
+                            <tr>
+                                <td>Administradores de Búferes</td>
+                                <td>Módulos que gestionan áreas de almacenamiento temporal para datos en tránsito.</td>
+                                <td>Reducir la discrepancia entre velocidades de dispositivos y procesadores.</td>
+                            </tr>
+                            <tr>
+                                <td>Gestores de Errores</td>
+                                <td>Software responsable de detectar y manejar errores en operaciones de E/S.</td>
+                                <td>Garantizar la integridad y confiabilidad de las operaciones.</td>
+                            </tr>
+                            <tr>
+                                <td>Interfaces de Alto Nivel</td>
+                                <td>Abstracciones utilizadas por programas para realizar operaciones de E/S sin conocer
+                                    detalles del hardware.</td>
+                                <td>Simplificar el desarrollo de aplicaciones al ocultar la complejidad del hardware.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
 
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="introduccion.html">Anterior</a>
                         </li>
-                        <li class="page-item active"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a></li>
+                        <li class="page-item active"><a class="page-link"
+                                href="5-2-principios-del-software-de-e-s.html">1</a></li>
+                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a>
+                        </li>
                         <li class="page-item"><a class="page-link" href="5-2-2-e-s-programadas.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
                         <li class="page-item"><a class="page-link" href="5-2-4-e-s-usando-dma.html">5</a></li>
                         <li class="page-item">
                             <a class="page-link" href="5-3-capas-de-software.html">Siguiente Tema</a>

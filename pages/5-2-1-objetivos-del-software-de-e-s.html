@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.2.1 Objetivos del software de E/S</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -52,22 +52,70 @@
         <!-- Section 1 -->
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.2.1 Objetivos del software de E/S</h5>
 
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                    </p>
+                    <p class="card-text">Un concepto clave del diseño de software de E/S se conoce como
+                        <strong>independencia del dispositivo</strong>. Esto significa que debe ser posible escribir
+                        programas que puedan leer archivos de distintos dispositivos, como disquetes, discos duros o
+                        CD-ROM, sin necesidad de modificar los programas para cada tipo de dispositivo. Por ejemplo, al
+                        ejecutar un comando como:</p>
+
+                    <p class="card-text"><code>sort &lt;entrada&gt; salida</code></p>
+
+                    <p class="card-text">El sistema debe permitir que las entradas provengan de un disco flexible, disco
+                        duro o teclado, y que las salidas se dirijan a un disco flexible, disco duro o pantalla. Es
+                        responsabilidad del sistema operativo resolver las diferencias entre estos dispositivos, aunque
+                        usen controladores en software muy distintos.</p>
+
+                    <p class="card-text">Un concepto relacionado con la independencia del dispositivo es el de
+                        <strong>nombres uniformes</strong>. Los nombres de archivos o dispositivos deben ser cadenas o
+                        números, sin depender del tipo de dispositivo. Por ejemplo, en sistemas UNIX, todos los discos
+                        se integran en la jerarquía del sistema de archivos, y un disco flexible puede montarse sobre un
+                        directorio como <code>/usr/ast/respaldo</code>. Esto permite que, al copiar un archivo a
+                        <code>/usr/ast/respaldo/lunes</code>, en realidad se copie en el disquete, sin necesidad de que
+                        el usuario distinga entre dispositivos. Así, todos los archivos y dispositivos se manejan
+                        uniformemente mediante nombres de trayectoria.</p>
+
+                    <p class="card-text"><strong>Manejo de errores</strong> es otro aspecto importante del software de
+                        E/S. Los errores deben manejarse lo más cerca posible del hardware. Por ejemplo:</p>
+                    <ul class="card-text">
+                        <li>Si un controlador detecta un error de lectura, debe intentar corregirlo automáticamente.
+                        </li>
+                        <li>Si no lo logra, el controlador de software puede intentar repetir la operación.</li>
+                        <li>Errores como los causados por partículas de polvo pueden ser transitorios y corregirse al
+                            repetir la operación.</li>
+                    </ul>
+                    <p class="card-text">Sólo si las capas inferiores no logran resolver el problema se informa a las
+                        capas superiores, permitiendo que muchos errores se gestionen de manera transparente sin afectar
+                        a los niveles superiores del sistema.</p>
+
+                    <p class="card-text">Otro aspecto clave del software de E/S es la distinción entre
+                        <strong>transferencias síncronas</strong> (por bloqueo) y <strong>asíncronas</strong>
+                        (controladas por interrupciones):</p>
+                    <ul class="card-text">
+                        <li>En la E/S física, las transferencias son generalmente asíncronas. La CPU inicia la operación
+                            y realiza otras tareas hasta recibir una interrupción.</li>
+                        <li>Para los programas de usuario, las operaciones de E/S son más simples si son síncronas, es
+                            decir, si el programa se suspende automáticamente hasta que los datos estén disponibles.
+                        </li>
+                    </ul>
+                    <p class="card-text">El sistema operativo se encarga de abstraer estas diferencias, haciendo que las
+                        operaciones controladas por interrupciones parezcan síncronas para los programas de usuario.</p>
+
 
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="introduccion.html">Anterior</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link"
+                                href="5-2-1-objetivos-del-software-de-e-s.html">2</a></li>
                         <li class="page-item"><a class="page-link" href="5-2-2-e-s-programadas.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
                         <li class="page-item"><a class="page-link" href="5-2-4-e-s-usando-dma.html">5</a></li>
                         <li class="page-item">
                             <a class="page-link" href="5-3-capas-de-software.html">Siguiente Tema</a>

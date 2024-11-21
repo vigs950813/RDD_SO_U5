@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.2.3 E/S manejadas por interrupciones</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -50,22 +50,92 @@
     <main>
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.2.3 E/S manejadas por interrupciones</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                       </p>
+                    <p class="card-text">La <strong>entrada/salida (E/S) manejada por interrupciones</strong> es un
+                        mecanismo avanzado en sistemas operativos que optimiza la gestión de operaciones entre
+                        dispositivos de hardware y el procesador. Este enfoque aborda las limitaciones de la <em>E/S
+                            programada</em>, en la que la CPU espera activamente a que el dispositivo esté listo,
+                        desperdiciando recursos valiosos del procesador.</p>
+
+                    <p class="card-text">En este modelo, los dispositivos generan <strong>señales de
+                            interrupción</strong> para notificar a la CPU cuando están listos para realizar una
+                        operación. Estas señales activan una rutina específica llamada <em>rutina de tratamiento</em>,
+                        la cual maneja la operación de E/S. Una vez completada, la CPU continúa ejecutando el programa
+                        interrumpido. Este proceso permite al procesador realizar otras tareas mientras el dispositivo
+                        se prepara, eliminando tiempos muertos y mejorando significativamente el rendimiento del
+                        sistema.</p>
+
+                    <p class="card-text">La implementación de la E/S manejada por interrupciones requiere un sistema
+                        robusto que incluya <strong>prioridades</strong>, <strong>enmascaramiento</strong> y
+                        <strong>anidamiento</strong> para gestionar múltiples solicitudes simultáneas de interrupciones.
+                    </p>
+
+                    <table class="table card-text">
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Descripción</th>
+                                <th>Ventajas</th>
+                                <th>Desventajas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Generación de Interrupciones</td>
+                                <td>Los dispositivos envían señales para indicar que están listos para operar.</td>
+                                <td>Elimina los tiempos muertos de la CPU.</td>
+                                <td>Requiere hardware adicional para gestionar señales.</td>
+                            </tr>
+                            <tr>
+                                <td>Rutina de Tratamiento</td>
+                                <td>Código específico que gestiona las operaciones de E/S asociadas a la interrupción.
+                                </td>
+                                <td>Facilita el manejo modular de dispositivos.</td>
+                                <td>Incrementa la complejidad de la programación.</td>
+                            </tr>
+                            <tr>
+                                <td>Enmascaramiento de Interrupciones</td>
+                                <td>Permite suprimir interrupciones de menor prioridad mientras se atiende una de mayor
+                                    prioridad.</td>
+                                <td>Evita conflictos entre interrupciones simultáneas.</td>
+                                <td>Puede retrasar la atención de interrupciones menos críticas.</td>
+                            </tr>
+                            <tr>
+                                <td>Anidamiento de Interrupciones</td>
+                                <td>Capacidad de interrumpir una rutina de tratamiento con otra de mayor prioridad.</td>
+                                <td>Optimiza la utilización de los recursos del sistema.</td>
+                                <td>Aumenta la complejidad de la implementación.</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema de Prioridades</td>
+                                <td>Establece el orden de atención de interrupciones según su importancia.</td>
+                                <td>Garantiza que las tareas críticas se atiendan primero.</td>
+                                <td>El diseño puede ser complicado y difícil de ajustar.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="card-text">En resumen, la E/S manejada por interrupciones representa un avance
+                        significativo sobre la E/S programada, ya que mejora la eficiencia del sistema y permite que el
+                        procesador dedique tiempo a otras tareas. Sin embargo, su implementación requiere un hardware
+                        adecuado y una programación más compleja para gestionar correctamente las interrupciones y sus
+                        prioridades.</p>
+
 
 
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="introduccion.html">Anterior</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a>
+                        </li>
                         <li class="page-item"><a class="page-link" href="5-2-2-e-s-programadas.html">3</a></li>
-                        <li class="page-item active"><a class="page-link" href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
+                        <li class="page-item active"><a class="page-link"
+                                href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
                         <li class="page-item"><a class="page-link" href="5-2-4-e-s-usando-dma.html">5</a></li>
                         <li class="page-item">
                             <a class="page-link" href="5-3-capas-de-software.html">Siguiente Tema</a>

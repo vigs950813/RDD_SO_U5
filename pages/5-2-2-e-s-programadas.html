@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.2.2 E/S programadas</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -50,21 +50,90 @@
     <main>
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.2.2 E/S programadas</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
+                    <p class="card-text">La <strong>E/S programada</strong> es una técnica básica en los sistemas
+                        operativos para gestionar operaciones de entrada y salida. En este método, la CPU controla
+                        directamente la interacción con los dispositivos periféricos, verificando su estado
+                        continuamente para determinar su disponibilidad antes de proceder con la transferencia de datos.
                     </p>
+
+                    <p class="card-text">Un elemento clave de este enfoque es el <strong>polling</strong>, un proceso en
+                        el que la CPU consulta repetidamente los registros de estado del dispositivo para verificar si
+                        está listo para enviar o recibir datos. Aunque esta técnica es sencilla de implementar, no es
+                        eficiente en sistemas multitarea, ya que la CPU permanece ocupada en este bucle de
+                        sincronización, impidiendo que realice otras tareas mientras espera.</p>
+
+                    <p class="card-text">La E/S programada es adecuada para sistemas simples o embebidos donde la
+                        eficiencia no es una prioridad. Sin embargo, en sistemas modernos, puede causar cuellos de
+                        botella debido a la alta dependencia de la CPU para manejar tareas de E/S, especialmente con
+                        dispositivos más lentos como impresoras o discos duros mecánicos.</p>
+
+                    <table class="table card-text">
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Descripción</th>
+                                <th>Ventajas</th>
+                                <th>Desventajas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sincronización por programa</td>
+                                <td>La CPU consulta continuamente el estado del dispositivo mediante un bucle de
+                                    sincronización.</td>
+                                <td>Simplicidad en la lógica de control.</td>
+                                <td>Desperdicio de tiempo de CPU y recursos.</td>
+                            </tr>
+                            <tr>
+                                <td>Transferencia directa</td>
+                                <td>El procesador maneja directamente la transferencia de datos entre el dispositivo y
+                                    la memoria principal.</td>
+                                <td>No requiere hardware adicional como DMA.</td>
+                                <td>Requiere la intervención constante de la CPU, reduciendo la eficiencia.</td>
+                            </tr>
+                            <tr>
+                                <td>Ineficiencia de recursos</td>
+                                <td>La CPU permanece inactiva mientras espera la disponibilidad del dispositivo.</td>
+                                <td>Fácil de implementar en sistemas simples.</td>
+                                <td>Inadecuado para sistemas multitarea o dispositivos lentos.</td>
+                            </tr>
+                            <tr>
+                                <td>Adecuado para sistemas embebidos</td>
+                                <td>Utilizado en dispositivos simples donde la multitarea no es prioritaria.</td>
+                                <td>Ideal para controladores de hardware básico.</td>
+                                <td>No escalable en sistemas complejos con múltiples dispositivos.</td>
+                            </tr>
+                            <tr>
+                                <td>Ejemplo de implementación</td>
+                                <td>Un sistema que utiliza polling para verificar el estado de un puerto serial.</td>
+                                <td>Permite el control preciso del hardware.</td>
+                                <td>La CPU no puede realizar otras tareas durante el polling.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="card-text">Entre las ventajas de la E/S programada se destacan su simplicidad de
+                        implementación y la ausencia de hardware adicional como controladores DMA. Sin embargo, presenta
+                        desventajas significativas, como la ineficiencia y el desperdicio de tiempo de la CPU, que
+                        podría dedicarse a tareas más productivas. Por estas razones, técnicas avanzadas como la
+                        <strong>E/S basada en interrupciones</strong> y el <strong>DMA</strong> han reemplazado en gran
+                        medida a la E/S programada en sistemas modernos.</p>
+
 
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="introduccion.html">Anterior</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="5-2-principios-del-software-de-e-s.html">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="5-2-1-objetivos-del-software-de-e-s.html">2</a>
+                        </li>
                         <li class="page-item active"><a class="page-link" href="5-2-2-e-s-programadas.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-2-3-e-s-manejadas-por-interrupciones.html">4</a></li>
                         <li class="page-item"><a class="page-link" href="5-2-4-e-s-usando-dma.html">5</a></li>
                         <li class="page-item">
                             <a class="page-link" href="5-3-capas-de-software.html">Siguiente Tema</a>
