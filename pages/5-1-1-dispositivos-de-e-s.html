@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.1.1 Dispositivos de E/S</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -50,25 +50,170 @@
     <main>
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.1.1 Dispositivos de E/S</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción.
-                    </p>
+                    <p class="card-text">Se pueden clasificar en dos grandes categorías los dispositivos de entrada y
+                        salida:</p>
+                    <ul class="card-text">
+                        <li>Dispositivos de bloque.</li>
+                        <li>Dispositivos de caracter.</li>
+                    </ul>
 
-                  
+                    <p class="card-text">Las principales características de los dispositivos de bloque son:</p>
+                    <ul class="card-text">
+                        <li>La información se almacena en bloques de tamaño fijo.</li>
+                        <li>Cada bloque tiene su propia dirección.</li>
+                        <li>Los tamaños más comunes de los bloques van desde los 128 bytes hasta los 1.024 bytes.</li>
+                        <li>Se puede leer o escribir en un bloque de forma independiente de los demás, en cualquier
+                            momento.</li>
+                    </ul>
+                    <p class="card-text">Un ejemplo típico de dispositivos de bloque son los discos.</p>
+
+                    <p class="card-text">Si lo analizamos con cuidado, la frontera entre los dispositivos que son
+                        direccionables por bloques y los que no lo son no se halla bien definida. Todo el mundo coincide
+                        en que un disco es un dispositivo direccionable por bloques, pues sea donde sea que esté el
+                        brazo actualmente, siempre es posible buscar otro cilindro y luego esperar que el bloque
+                        requerido gire, hasta pasar bajo la cabeza.</p>
+                    <p class="card-text">Consideremos ahora una unidad de cinta DAT de 8 mm empleada para realizar
+                        respaldos de disco. Estas cintas generalmente contienen bloques de tamaño fijo. Si la unidad de
+                        cinta lee el bloque N, ésta siempre podrá rebobinar la cinta y avanzarla hasta llegar al bloque
+                        N. Esta operación es análoga a una búsqueda de disco, excepto que tarda mucho más. Además,
+                        podría o no ser posible reescribir un bloque a la mitad de una cinta. Incluso, si fuera posible
+                        usar las cintas como dispositivos por bloques con acceso directo, ésta no es la forma como se
+                        usan normalmente.</p>
+
+                    <p class="card-text">Las principales características de los dispositivos de caracter son:</p>
+                    <ul class="card-text">
+                        <li>La información se transfiere como un flujo de caracteres, sin sujetarse a una estructura de
+                            bloques.</li>
+                        <li>No se pueden utilizar direcciones.</li>
+                        <li>No tienen una operación de búsqueda.</li>
+                    </ul>
+                    <p class="card-text">Un ejemplo típico de dispositivos de caracter son las impresoras de línea,
+                        terminales, interfaces de una red, ratones, etc.</p>
+
+                    <p class="card-text">Este esquema de clasificación no es perfecto; algunos dispositivos simplemente
+                        no se ajustan a él. Los relojes, por ejemplo, no son direccionables por bloques, ni tampoco
+                        generan ni aceptan flujos de caracteres; lo único que hacen es generar interrupciones a
+                        intervalos bien definidos. Las pantallas mapeadas en la memoria tampoco se ajustan muy bien al
+                        modelo. No obstante, el modelo de dispositivos por bloques y por caracteres es lo bastante
+                        general como para servir de base para hacer que una parte del software del sistema operativo que
+                        se ocupa de E/S sea independiente del dispositivo. El sistema de archivos, por ejemplo, sólo
+                        maneja dispositivos por bloques abstractos y deja la parte dependiente del dispositivo a un
+                        software de más bajo nivel llamado controladores de dispositivos.</p>
+
+                    <p class="card-text">Cuadro Comparativo: Dispositivos de Bloque vs. Dispositivos de Carácter</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="card-text">Aspecto</th>
+                                <th class="card-text">Dispositivos de Bloque</th>
+                                <th class="card-text">Dispositivos de Carácter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="card-text">Definición</td>
+                                <td class="card-text">La información se almacena en bloques de tamaño fijo, cada bloque
+                                    tiene una dirección.</td>
+                                <td class="card-text">La información se transfiere como un flujo continuo de caracteres,
+                                    sin estructura de bloques.</td>
+                            </tr>
+                            <tr>
+                                <td class="card-text">Operación</td>
+                                <td class="card-text">Se puede leer o escribir en un bloque de forma independiente de
+                                    los demás, en cualquier momento.</td>
+                                <td class="card-text">No tienen operación de búsqueda y no utilizan direcciones.</td>
+                            </tr>
+                            <tr>
+                                <td class="card-text">Tamaño</td>
+                                <td class="card-text">Los bloques típicos tienen tamaños que van de 128 bytes a 1,024
+                                    bytes.</td>
+                                <td class="card-text">No se manejan tamaños de bloques; los datos fluyen de forma
+                                    continua.</td>
+                            </tr>
+                            <tr>
+                                <td class="card-text">Ejemplos típicos</td>
+                                <td class="card-text">Discos duros, unidades SSD, y cintas DAT en ciertos usos.</td>
+                                <td class="card-text">Impresoras de línea, terminales, interfaces de red, ratones.</td>
+                            </tr>
+                            <tr>
+                                <td class="card-text">Acceso</td>
+                                <td class="card-text">Direccional y direccionable por bloques, aunque algunos
+                                    dispositivos como cintas pueden no usarse como bloques.</td>
+                                <td class="card-text">Acceso secuencial sin direccionamiento.</td>
+                            </tr>
+                            <tr>
+                                <td class="card-text">Excepciones</td>
+                                <td class="card-text">Algunos dispositivos pueden tener características mixtas, como las
+                                    cintas usadas en respaldos.</td>
+                                <td class="card-text">Relojes y pantallas mapeadas en memoria no encajan perfectamente
+                                    en este modelo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="card-text">También, existe otro tipo de clasificación, dependiendo de su interacción con
+                        su entorno. Los dispositivos externos que tienen que hacer E/S con las computadoras pueden
+                        clasificarse, básicamente, en tres categorías:</p>
+                    <ul class="card-text">
+                        <li>Dispositivos legibles por los humanos: apropiados para la comunicación con el usuario. Como
+                            ejemplo se tienen las terminales de video, que constan de un teclado, una pantalla, pueden
+                            tener también otros dispositivos como un ratón o una impresora.</li>
+                        <li>Dispositivos legibles por la máquina: adecuados para comunicarse con equipos electrónicos,
+                            como discos, unidades de cinta, controladores y sensores.</li>
+                        <li>Dispositivos de comunicaciones: apropiados para comunicarse con dispositivos lejanos. Por
+                            ejemplo, adaptadores de líneas digitales y módems.</li>
+                    </ul>
+
+                    <p class="card-text">Existen grandes diferencias entre las clases de dispositivos y éstas son,
+                        incluso, sustanciales dentro de cada clase. Las siguientes son las diferencias principales:</p>
+                    <ul class="card-text">
+                        <li><strong>Velocidad de los datos:</strong> Puede haber una diferencia de varios órdenes de
+                            magnitud en las velocidades de transmisión de datos.</li>
+                        <li><strong>Aplicaciones:</strong> La utilidad que se le da a un dispositivo tiene una gran
+                            influencia en el software y en las políticas del sistema operativo y de las utilidades de
+                            apoyo. Por ejemplo, un disco que almacena archivos necesita el soporte de un software de
+                            gestión de archivos. En cambio, un disco usado como almacén de páginas de un sistema de
+                            memoria virtual dependerá del uso que se haga del hardware y software de memoria virtual.
+                            Además, estas aplicaciones tendrán su impacto en los algoritmos de planificación del disco.
+                        </li>
+                        <li><strong>Complejidad del control:</strong> Una impresora necesita una interfaz de control
+                            relativamente simple. En cambio, un disco es mucho más complejo. El efecto de estas
+                            diferencias en el sistema operativo es filtrado, hasta cierto punto, por la complejidad del
+                            módulo de E/S que controla al dispositivo.</li>
+                        <li><strong>Unidad de transferencia:</strong> Los datos pueden transmitirse como flujos de bytes
+                            o caracteres (por ejemplo, en una terminal) o en bloques mayores (por ejemplo, con un
+                            disco).</li>
+                        <li><strong>Representación de los datos:</strong> En diferentes dispositivos se emplean
+                            diferentes esquemas de codificación de datos, incluidas las diferencias en los códigos de
+                            caracteres y los convenios de paridad.</li>
+                        <li><strong>Condiciones de error:</strong> La naturaleza de los errores, la manera en que se
+                            informa sobre ellos, sus consecuencias y el rango disponible de respuestas difieren
+                            ampliamente de un dispositivo a otro.</li>
+                    </ul>
+
+                    <p class="card-text">Esta diversidad consistente y uniforme de E/S es difícil de alcanzar, tanto
+                        desde el punto de vista del sistema operativo como de los procesos de usuario.</p>
+
+
+
 
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="../index.html">Anterior</a>
                         </li>
                         <li class="page-item"><a class="page-link" href="introduccion.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-1-principios-del-hardware-de-e-s.html">2</a></li>
-                        <li class="page-item active"><a class="page-link" href="5-1-1-dispositivos-de-e-s.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-1-2-controladores-de-dispositivos.html">4</a></li>
+                        <li class="page-item"><a class="page-link" href="5-1-principios-del-hardware-de-e-s.html">2</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="5-1-1-dispositivos-de-e-s.html">3</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="5-1-2-controladores-de-dispositivos.html">4</a>
+                        </li>
                         <li class="page-item"><a class="page-link" href="5-1-3-interrupciones.html">5</a></li>
-                        <li class="page-item"><a class="page-link" href="5-1-4-acceso-de-memoria-directo-dma.html">6</a></li>
+                        <li class="page-item"><a class="page-link" href="5-1-4-acceso-de-memoria-directo-dma.html">6</a>
+                        </li>
                         <li class="page-item">
                             <a class="page-link" href="5-2-principios-del-software-de-e-s.html">Siguiente Tema</a>
                         </li>

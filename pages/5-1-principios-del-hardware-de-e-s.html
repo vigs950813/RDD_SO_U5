@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>------------------------------------------</title>
+  <title>5.1 Principios del hardware de E/S</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <!-- Bootstrap CSS-->
@@ -53,14 +53,174 @@
   <main>
     <section>
       <div class="card">
-        <h5 class="card-header">------------------------------------------</h5>
+        <h5 class="card-header">5.1 Principios del hardware de E/S</h5>
         <div class="card-body">
 
-          <p class="card-text">
-           En construcción
-          </p>
+          <p class="card-text">Una de las funciones principales de un S. O. es el control de todos los dispositivos de e
+            / s de la computadora.</p>
 
-        
+          <p class="card-text">Las principales funciones relacionadas son:</p>
+          <ul class="card-text">
+            <li>Enviar comandos a los dispositivos.</li>
+            <li>Detectar las interrupciones.</li>
+            <li>Controlar los errores.</li>
+          </ul>
+
+          <p class="card-text">La interfaz que se implementa para conectar los dispositivos y el resto del sistema debe
+            de ser sencilla y fácil de usar, es decir, intuitiva para el usuario. A su vez, tiene que ser la misma
+            (preferentemente) para todos los dispositivos, logrando así la independencia del dispositivo.</p>
+
+          <p class="card-text">El código de e / s representa una fracción significativa del S. O. Además, el uso
+            inapropiado de los dispositivos de e / s frecuentemente genera ineficiencias del sistema, lo que afecta la
+            performance global.</p>
+
+          <p class="card-text"><strong>Categorización y Funciones de los Dispositivos de E/S</strong></p>
+
+          <p class="card-text">Los dispositivos de E/S se dividen en dispositivos de interfaz de usuario, que permiten
+            la entrada de datos (como teclados y micrófonos) y la salida de información (como monitores y altavoces);
+            dispositivos de almacenamiento, que ofrecen almacenamiento persistente y acceso a datos para programas en
+            ejecución; y dispositivos de comunicaciones, que facilitan la conexión de la computadora con otras redes y
+            sistemas.</p>
+
+          <p class="card-text">Aunque son cruciales para la operatividad de la computadora, estos dispositivos suelen
+            ser más lentos que la CPU y la memoria principal, lo que puede provocar cuellos de botella en el
+            procesamiento de datos. Por ello, los sistemas operativos implementan estrategias avanzadas de gestión de
+            E/S para optimizar la transferencia de datos y mejorar la eficiencia y la experiencia del usuario.</p>
+
+          <p class="card-text"><strong>Principios de Hardware de E/S y Funciones Principales del Sistema Operativo en el
+              Control
+              de Dispositivos de E/S</strong></p>
+
+          <table class="table card-text">
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>Principios del Hardware de E/S</th>
+                <th>Funciones del Sistema Operativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Interacción con dispositivos</td>
+                <td>Proveer mecanismos físicos para conectar dispositivos al sistema.</td>
+                <td>Enviar comandos a los dispositivos para iniciar y gestionar operaciones de E/S.</td>
+              </tr>
+              <tr>
+                <td>Manejo de interrupciones</td>
+                <td>Los dispositivos generan señales (interrupciones) al procesador para indicar que requieren atención.
+                </td>
+                <td>Detectar y manejar las interrupciones de manera eficiente para no sobrecargar al procesador.</td>
+              </tr>
+              <tr>
+                <td>Gestión de errores</td>
+                <td>Implementación de mecanismos en hardware para supervisar fallos (por ejemplo, detección de fallas en
+                  disco).</td>
+                <td>Controlar errores en operaciones de E/S y recuperar el sistema sin afectar otras tareas en
+                  ejecución.</td>
+              </tr>
+              <tr>
+                <td>Independencia del dispositivo</td>
+                <td>Diseñar interfaces de hardware compatibles con diversos periféricos.</td>
+                <td>Implementar una interfaz uniforme y abstracta que permita operar distintos dispositivos sin conocer
+                  sus detalles técnicos.</td>
+              </tr>
+              <tr>
+                <td>Eficiencia</td>
+                <td>Proporcionar métodos rápidos para transferir datos (por ejemplo, DMA, buses eficientes).</td>
+                <td>Optimizar el código de E/S para evitar cuellos de botella y mejorar la performance general del
+                  sistema.</td>
+              </tr>
+              <tr>
+                <td>Impacto en la performance</td>
+                <td>Los dispositivos de E/S más lentos pueden convertirse en puntos críticos para el rendimiento del
+                  sistema.</td>
+                <td>Administrar los dispositivos de E/S para minimizar el impacto de su uso inadecuado en la performance
+                  global del sistema.</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <p class="card-text"><strong>El Sistema de E/S en el Sistema Operativo</strong></p>
+          <p class="card-text">El sistema de E/S es un componente integral del sistema operativo, encargado de
+            administrar los dispositivos de E/S y proporcionar una interfaz de programación abstracta para su manejo.
+            Este sistema simplifica la interacción con los dispositivos, mejora el rendimiento de E/S mediante técnicas
+            de buffering y caching, y soporta la creación de dispositivos virtuales para la integración de nuevos
+            periféricos. Además, facilita la instalación y configuración automática de dispositivos a través de
+            tecnologías como plug-and-play. Una gestión eficaz de E/S es crucial para asegurar un rendimiento óptimo de
+            la computadora y una experiencia de usuario fluida, ya que una E/S ineficiente puede degradar
+            significativamente el rendimiento del sistema.</p>
+
+          <p class="card-text"><strong>Caracterización y Conexión de los Dispositivos de E/S</strong></p>
+          <p class="card-text">Los dispositivos de E/S se caracterizan por su método de acceso (secuencial o aleatorio),
+            su tamaño de transferencia de datos (bloques o caracteres) y su interfaz de programación. Los controladores
+            de dispositivos son software especializado que facilita la comunicación entre la CPU y los dispositivos de
+            E/S, traduciendo las instrucciones de alto nivel en operaciones de bajo nivel adecuadas para cada
+            dispositivo. Estos controladores pueden ser específicos para un dispositivo o universales, como en el caso
+            de los estándares SCSI y SATA para dispositivos de almacenamiento. La programación de los controladores se
+            realiza a través de interfaces de bajo nivel que permiten el acceso a registros específicos y la
+            transferencia de datos entre la memoria principal y los dispositivos.</p>
+
+          <p class="card-text"><strong>Diferenciación entre Dispositivos de Bloques y de Caracteres</strong></p>
+          <p class="card-text">Los dispositivos de E/S se clasifican en dispositivos de bloques y de caracteres en
+            función de su método de manejo de datos. Los dispositivos de bloques, como los discos duros y las unidades
+            SSD, operan con bloques de datos de tamaño fijo y permiten el acceso aleatorio a estos bloques. En
+            contraste, los dispositivos de caracteres, como teclados, ratones e impresoras, procesan datos de manera
+            secuencial, transmitiendo y recibiendo información como un flujo continuo de caracteres. Esta distinción es
+            fundamental para comprender las diferencias en el almacenamiento y la transmisión de datos entre los
+            distintos tipos de dispositivos y cómo el sistema operativo debe gestionarlos adecuadamente.</p>
+
+          <p class="card-text"><strong>Modelos de Direccionamiento de E/S: Puertos y Memoria Mapeada</strong></p>
+          <p class="card-text">Los modelos de direccionamiento de E/S incluyen el direccionamiento por puertos y la
+            memoria mapeada. El direccionamiento por puertos, utilizado comúnmente en arquitecturas x86 de Intel, asigna
+            a cada dispositivo un puerto de E/S único y emplea instrucciones específicas para la transferencia de datos.
+            Por otro lado, el modelo de memoria mapeada, frecuente en arquitecturas RISC como ARM, asigna bloques de
+            direcciones de memoria a los dispositivos, permitiendo la comunicación mediante instrucciones de manejo de
+            memoria convencionales. Cada modelo tiene sus propias ventajas, como la simplicidad del direccionamiento por
+            puertos o la flexibilidad de la memoria mapeada, y ambos son esenciales para la interacción entre la CPU y
+            los dispositivos de E/S.</p>
+
+          <p class="card-text"><strong>Estructura de los dispositivos E/S</strong></p>
+          <p class="card-text">En general, la estructura típica de un dispositivo de entrada/salida está dividida en
+            tres partes:</p>
+          <ul class="card-text">
+            <li><strong>Adaptador de Entrada/Salida del ordenador, o interfaz del bus:</strong> Se encarga de traducir
+              las señales al dialecto empleado por el bus del ordenador. Algunos ejemplos de interfaces de este tipo son
+              los buses PCI, PCMCIA, USB, PCI-express o SATA entre muchos otros.</li>
+            <li><strong>Control del dispositivo, o puerto de lectura/escritura:</strong> Ofrece una interfaz que es
+              empleada por el gestor de dispositivos para gobernar el dispositivo, que dispone de:
+              <ul>
+                <li>Registros de órdenes</li>
+                <li>Registros de estado</li>
+                <li>Registros de lectura/escritura, o alternativamente una pequeña memoria propia</li>
+              </ul>
+            </li>
+            <li><strong>Adaptador de Entrada/Salida del dispositivo, o interfaz del dispositivo:</strong> Se encarga de
+              traducir las señales al dialecto empleado por el dispositivo.</li>
+          </ul>
+          <p class="card-text">Cuanto más elaborado sea el puerto de lectura/escritura, mayor rendimiento se puede
+            llegar a alcanzar, puesto que el gestor de dispositivo será más sencillo (y eso implica menor número de
+            instrucciones a ejecutar en el gestor de dispositivo). En el siguiente apartado, el 5.1.1 Dispositivos de
+            E/S, se describirá más a detalle todos los aspectos acerca de los dispositivos de E/S.</p>
+          <p class="card-text"><strong>Gestor de dispositivos</strong></p>
+          <p class="card-text">El gestor de dispositivo, popularmente conocido por la palabra inglesa <em>driver</em>,
+            es la parte
+            del sistema operativo que se encarga de gobernar un cierto dispositivo o una familia de dispositivos de
+            naturaleza
+            similar. El gestor de dispositivo se trata de una pieza de software que conoce los detalles de bajo nivel
+            del
+            dispositivo.</p>
+          <p class="card-text">De esta manera, el <em>driver</em> hace uso del conjunto de instrucciones que ofrece el
+            puerto de
+            E/S, los registros de estado y de lectura y escritura, para gobernar el dispositivo. Si el fabricante del
+            dispositivo
+            no ofrece un <em>driver</em> para un cierto sistema operativo, el dispositivo y los recursos que ofrece no
+            pueden ser
+            gestionados por el sistema operativo.</p>
+          <p class="card-text">Por lo general, el fabricante de un dispositivo desarrolla el gestor de dispositivo para
+            los sistemas operativos mayoritarios (i.e., Windows y Linux) para asegurar que su dispositivo alcanza la
+            mayor cuota de usuarios posibles.</p>
+
 
           <br>
 
@@ -79,7 +239,7 @@
               <a class="page-link" href="5-2-principios-del-software-de-e-s.html">Siguiente Tema</a>
             </li>
           </ul>
-        
+
 
 
         </div>
