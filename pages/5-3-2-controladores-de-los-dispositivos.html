@@ -50,12 +50,93 @@
     <main>
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.3.2 Controladores de los dispositivos</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                    </p>
+                    <p class="card-text">Todo el código dependiente del dispositivo se organiza en <strong>controladores
+                            de dispositivo</strong>. Cada controlador gestiona un tipo de dispositivo o una clase de
+                        dispositivos similares. Por ejemplo, aunque el sistema maneje terminales de diferentes marcas
+                        con pequeñas diferencias, podría utilizarse un único controlador. Sin embargo, dispositivos
+                        completamente distintos, como una terminal mecánica simple y una terminal gráfica avanzada,
+                        requieren controladores de software separados debido a sus diferencias significativas.</p>
+
+                    <p class="card-text">Los <strong>controladores en software</strong> interactúan directamente con los
+                        <em>registros de dispositivo</em> del hardware. Estos registros aceptan comandos específicos que
+                        el controlador emite y verifica. Por ejemplo, un controlador de disco en software conoce los
+                        detalles técnicos del hardware, como el manejo de sectores, cilindros, pistas, y otros aspectos
+                        mecánicos necesarios para operar correctamente el disco.</p>
+
+                    <p class="card-text"><strong>Conceptos clave de los controladores de dispositivos:</strong></p>
+
+                    <table class="table card-text">
+                        <thead>
+                            <tr>
+                                <th>Aspecto Clave</th>
+                                <th>Descripción</th>
+                                <th>Implicaciones</th>
+                                <th>Ejemplos y Soluciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Independencia de la clase de dispositivo</td>
+                                <td>Cada controlador de software maneja un tipo o clase de dispositivos similares.</td>
+                                <td>Reduce la complejidad del sistema operativo centralizando el manejo de
+                                    características específicas.</td>
+                                <td>Un controlador para terminales similares; controladores separados para dispositivos
+                                    como terminales mecánicas y gráficas.</td>
+                            </tr>
+                            <tr>
+                                <td>Registros de dispositivos</td>
+                                <td>Los controladores en software interactúan con los registros del hardware para emitir
+                                    comandos y verificar su ejecución.</td>
+                                <td>Abstrae detalles técnicos del hardware para los niveles superiores del sistema
+                                    operativo.</td>
+                                <td>Controladores de disco gestionan sectores, cilindros y tiempos de asentamiento de
+                                    cabezales.</td>
+                            </tr>
+                            <tr>
+                                <td>Manejo de peticiones</td>
+                                <td>Aceptan peticiones abstractas del software y las convierten en operaciones
+                                    específicas de hardware.</td>
+                                <td>Facilita la comunicación entre el software de alto nivel y el hardware.</td>
+                                <td>Cola de peticiones para gestionar múltiples solicitudes de E/S de manera eficiente.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Traducción de peticiones</td>
+                                <td>Transforman peticiones abstractas en instrucciones concretas para el hardware.</td>
+                                <td>Garantiza la correcta ejecución de operaciones en dispositivos físicos.</td>
+                                <td>Controladores de disco calculan ubicaciones físicas de bloques y verifican el estado
+                                    del hardware antes de operar.</td>
+                            </tr>
+                            <tr>
+                                <td>Bloqueo y espera</td>
+                                <td>Esperan a que el hardware complete su tarea, bloqueándose hasta ser activados por
+                                    una interrupción.</td>
+                                <td>Optimiza el uso de recursos al evitar ciclos inactivos de la CPU.</td>
+                                <td>Operaciones mecánicas como mover cabezales de disco requieren bloqueos; tareas
+                                    rápidas como mover un cursor no lo necesitan.</td>
+                            </tr>
+                            <tr>
+                                <td>Manejo de errores</td>
+                                <td>Verifican que las operaciones se completen correctamente y gestionan errores si
+                                    ocurren.</td>
+                                <td>Aumenta la confiabilidad y robustez del sistema operativo.</td>
+                                <td>Controladores que reintentan operaciones fallidas o reportan errores al software.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Finalización y cola de peticiones</td>
+                                <td>Tras completar una operación, seleccionan y procesan la siguiente petición en la
+                                    cola.</td>
+                                <td>Maximiza la eficiencia al mantener los dispositivos en uso continuo.</td>
+                                <td>Controladores procesan múltiples solicitudes de lectura/escritura de disco en
+                                    secuencia.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
 
 
                     <ul class="pagination justify-content-end">
@@ -63,9 +144,12 @@
                             <a class="page-link" href="5-2-principios-del-software-de-e-s.html">Anterior</a>
                         </li>
                         <li class="page-item"><a class="page-link" href="5-3-capas-de-software.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-3-1-manejador-de-interrupciones.html">2</a></li>
-                        <li class="page-item active"><a class="page-link" href="5-3-2-controladores-de-los-dispositivos.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-3-3-software-modo-usuario-para-e-s.html">4</a></li>
+                        <li class="page-item"><a class="page-link" href="5-3-1-manejador-de-interrupciones.html">2</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link"
+                                href="5-3-2-controladores-de-los-dispositivos.html">3</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-3-3-software-modo-usuario-para-e-s.html">4</a></li>
                         <li class="page-item">
                             <a class="page-link" href="bibliografia.html">Lista de referencias bibliográficas</a>
                         </li>

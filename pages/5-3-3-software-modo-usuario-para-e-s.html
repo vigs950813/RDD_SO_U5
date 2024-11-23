@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.3.3 Software modo usuario para E/S</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -50,22 +50,61 @@
     <main>
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.3.3 Software modo usuario para E/S</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                       </p>
+                    <p class="card-text">El <strong>software modo usuario para E/S</strong> complementa el sistema
+                        operativo mediante bibliotecas y programas que operan fuera del núcleo (kernel). Aunque la mayor
+                        parte del software de E/S está integrada en el sistema operativo, algunas funciones esenciales
+                        se implementan en bibliotecas enlazadas a programas de usuario o como procesos independientes.
+                    </p>
+
+                    <h5 class="card-title">Bibliotecas de E/S</h5>
+                    <p class="card-text">Las bibliotecas de E/S incluyen procedimientos que facilitan la interacción con
+                        el sistema operativo. Por ejemplo, una llamada como:</p>
+                    <p class="card-text"><code>count = write(fd, buffer, nbytes);</code></p>
+                    <p class="card-text">en un programa en C, se resuelve mediante el procedimiento de biblioteca
+                        <code>write</code>, que se enlaza al programa en tiempo de ejecución. Estas bibliotecas colocan
+                        los parámetros en el lugar apropiado para la llamada al sistema y, en algunos casos, realizan
+                        tareas adicionales, como el <strong>formateo de entradas y salidas</strong>.</p>
+
+                    <p class="card-text">Un ejemplo de formateo es el uso de <code>printf</code>, que toma una cadena de
+                        formato y variables, construye una cadena ASCII y luego invoca <code>write</code> para enviarla
+                        a la salida. De manera similar, <code>scanf</code> lee entradas y las almacena en variables
+                        basadas en un formato específico. Estos procedimientos son parte de la biblioteca estándar de
+                        E/S y se ejecutan como parte de programas de usuario.</p>
+
+                    <h5 class="card-title">Sistemas de Spool</h5>
+                    <p class="card-text">Además de las bibliotecas, el software de E/S incluye <strong>sistemas de
+                            spool</strong>, diseñados para manejar dispositivos de uso exclusivo en sistemas
+                        multiprogramados. Un ejemplo típico es el manejo de una impresora. Permitir el acceso directo a
+                        la impresora por parte de cualquier proceso podría causar problemas, como bloquear el
+                        dispositivo innecesariamente.</p>
+
+                    <p class="card-text">Para evitar esto, se utiliza un proceso especial llamado
+                        <strong>demonio</strong> y un <strong>directorio de spool</strong>. El flujo típico de trabajo
+                        es el siguiente:</p>
+                    <ul class="card-text">
+                        <li>El proceso usuario genera el archivo a imprimir y lo coloca en el directorio de spool.</li>
+                        <li>El demonio, que es el único con permiso para acceder directamente al dispositivo, toma los
+                            archivos del directorio y los envía a la impresora.</li>
+                    </ul>
+                    <p class="card-text">Este enfoque asegura que ningún proceso usuario pueda monopolizar el
+                        dispositivo, garantizando un uso más eficiente y ordenado.</p>
 
 
-                       <ul class="pagination justify-content-end">
+
+                    <ul class="pagination justify-content-end">
                         <li class="page-item">
                             <a class="page-link" href="5-2-principios-del-software-de-e-s.html">Anterior</a>
                         </li>
                         <li class="page-item"><a class="page-link" href="5-3-capas-de-software.html">1</a></li>
-                        <li class="page-item"><a class="page-link" href="5-3-1-manejador-de-interrupciones.html">2</a></li>
-                        <li class="page-item"><a class="page-link" href="5-3-2-controladores-de-los-dispositivos.html">3</a></li>
-                        <li class="page-item active"><a class="page-link" href="5-3-3-software-modo-usuario-para-e-s.html">4</a></li>
+                        <li class="page-item"><a class="page-link" href="5-3-1-manejador-de-interrupciones.html">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-3-2-controladores-de-los-dispositivos.html">3</a></li>
+                        <li class="page-item active"><a class="page-link"
+                                href="5-3-3-software-modo-usuario-para-e-s.html">4</a></li>
                         <li class="page-item">
                             <a class="page-link" href="bibliografia.html">Lista de referencias bibliográficas</a>
                         </li>

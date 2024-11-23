@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>------------------------------------------</title>
+    <title>5.3.1 Manejador de interrupciones</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap CSS-->
@@ -51,12 +51,56 @@
     <main>
         <section>
             <div class="card">
-                <h5 class="card-header">------------------------------------------</h5>
+                <h5 class="card-header">5.3.1 Manejador de interrupciones</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        En construcción
-                       </p>
+                    <p class="card-text">El mecanismo para notificar al sistema operativo sobre un suceso externo se
+                        basa en <strong>interrumpir</strong> la hebra que está en ejecución y transferir el control a un
+                        <strong>manejador de interrupción</strong>. Este manejador se encarga de procesar la
+                        interrupción y devolver el control al sistema una vez completada la tarea.</p>
+
+                    <p class="card-text">Para que el manejador de interrupción funcione correctamente, debe existir
+                        suficiente espacio de estado en el hardware. Esto asegura que el sistema pueda <strong>restaurar
+                            el contexto</strong> de la hebra después de que el manejador haya terminado. Sin embargo,
+                        los manejadores recién invocados enfrentan retrasos debido a la necesidad de reconstruir el
+                        contenido de los TLB (Translation Lookaside Buffer) y las memorias caché, ya que los datos o
+                        códigos relevantes probablemente no estarán presentes en estos elementos al inicio de la
+                        interrupción.</p>
+
+                    <p class="card-text">Una vez que se reasigna la hebra interrumpida, su <strong>contexto de
+                            ejecución</strong> se restaura lógicamente, incluyendo el contenido del registro. No
+                        obstante, los TLB y las memorias caché deben reconstruirse en función de las demandas
+                        posteriores del programa, lo que puede ocasionar retrasos significativos tanto para el manejador
+                        de interrupción como para la hebra interrumpida.</p>
+
+                    <p class="card-text"><strong>Gestión de interrupciones en el sistema operativo</strong></p>
+
+                    <ul class="card-text">
+                        <li><strong>Ocultación de interrupciones:</strong> Las interrupciones, aunque inevitables, deben
+                            ser gestionadas en las capas más profundas del sistema operativo. Esto minimiza las partes
+                            del sistema que necesitan conocimiento directo de las interrupciones.</li>
+                        <li><strong>Bloqueo de procesos:</strong> Antes de que una interrupción ocurra, los procesos que
+                            inician operaciones de E/S pueden bloquearse mediante técnicas como:
+                            <ul class="card-text">
+                                <li>Ejecutar un <code>DOWN</code> con un semáforo.</li>
+                                <li>Realizar un <code>WA</code> con una variable de condición.</li>
+                                <li>Ejecutar un <code>RECEIVE</code> con un mensaje.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Desbloqueo de procesos:</strong> Cuando ocurre la interrupción, el procedimiento
+                            correspondiente desbloquea el proceso que la originó mediante:
+                            <ul class="card-text">
+                                <li>Un <code>uP</code> con un semáforo.</li>
+                                <li>Un <code>SIGNAL</code> con una variable de condición en un monitor.</li>
+                                <li>El envío de un mensaje al proceso bloqueado.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="card-text">El efecto final de la interrupción es que un <strong>proceso bloqueado</strong>
+                        está ahora en condiciones de ejecutarse, permitiendo que el sistema gestione de manera eficiente
+                        las operaciones de E/S y otros eventos externos.</p>
+
 
                     <br>
 
@@ -65,9 +109,12 @@
                             <a class="page-link" href="5-2-principios-del-software-de-e-s.html">Anterior</a>
                         </li>
                         <li class="page-item"><a class="page-link" href="5-3-capas-de-software.html">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="5-3-1-manejador-de-interrupciones.html">2</a></li>
-                        <li class="page-item"><a class="page-link" href="5-3-2-controladores-de-los-dispositivos.html">3</a></li>
-                        <li class="page-item"><a class="page-link" href="5-3-3-software-modo-usuario-para-e-s.html">4</a></li>
+                        <li class="page-item active"><a class="page-link"
+                                href="5-3-1-manejador-de-interrupciones.html">2</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-3-2-controladores-de-los-dispositivos.html">3</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="5-3-3-software-modo-usuario-para-e-s.html">4</a></li>
                         <li class="page-item">
                             <a class="page-link" href="bibliografia.html">Lista de referencias bibliográficas</a>
                         </li>
