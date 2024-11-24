@@ -70,52 +70,49 @@
                         Posteriormente, la tarea se delega al módulo DMA, permitiendo que la CPU continúe con otras
                         actividades.</p>
 
-                    <table class="table card-text">
-                        <thead>
-                            <tr>
-                                <th>Aspecto</th>
-                                <th>Descripción</th>
-                                <th>Ventajas</th>
-                                <th>Desventajas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Control del Bus</td>
-                                <td>El módulo DMA toma control del bus para realizar transferencias directas entre
-                                    dispositivos y memoria.</td>
-                                <td>Elimina la intervención constante de la CPU, mejorando la eficiencia.</td>
-                                <td>Requiere arbitraje para evitar conflictos en el uso del bus.</td>
-                            </tr>
-                            <tr>
-                                <td>Registros del DMA</td>
-                                <td>Incluyen registros de datos, dirección y contador de palabras para gestionar las
-                                    transferencias.</td>
-                                <td>Permiten transferencias automáticas y precisas.</td>
-                                <td>Diseño más complejo del hardware del controlador.</td>
-                            </tr>
-                            <tr>
-                                <td>Modos de Operación</td>
-                                <td>Diversos modos como 'robo de ciclos' o 'ráfaga' ajustan el uso del bus según las
-                                    necesidades.</td>
-                                <td>Ofrecen flexibilidad para manejar diferentes volúmenes de datos.</td>
-                                <td>El modo 'ráfaga' puede dejar a la CPU inactiva durante períodos prolongados.</td>
-                            </tr>
-                            <tr>
-                                <td>Interrupción Final</td>
-                                <td>El DMA genera una interrupción para notificar a la CPU al finalizar una operación.
-                                </td>
-                                <td>Minimiza la supervisión de la CPU durante la transferencia.</td>
-                                <td>Requiere un manejo eficiente de interrupciones en el sistema operativo.</td>
-                            </tr>
-                            <tr>
-                                <td>Eficiencia en Grandes Transferencias</td>
-                                <td>Es ideal para mover grandes volúmenes de datos entre memoria y dispositivos.</td>
-                                <td>Incrementa significativamente el rendimiento del sistema.</td>
-                                <td>No es práctico para transferencias pequeñas o esporádicas.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table class="table card-text" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #797979; color: white; text-align: center;">
+                                    <th>Aspecto</th>
+                                    <th>Descripción</th>
+                                    <th>Ventajas</th>
+                                    <th>Desventajas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #d6d6d6; text-align: center;">
+                                    <td>Control del Bus</td>
+                                    <td style="text-align: left;">El módulo DMA toma control del bus para realizar transferencias directas entre dispositivos y memoria.</td>
+                                    <td style="text-align: left;">Elimina la intervención constante de la CPU, mejorando la eficiencia.</td>
+                                    <td style="text-align: left;">Requiere arbitraje para evitar conflictos en el uso del bus.</td>
+                                </tr>
+                                <tr style="background-color: #f3f3f3; text-align: center;">
+                                    <td>Registros del DMA</td>
+                                    <td style="text-align: left;">Incluyen registros de datos, dirección y contador de palabras para gestionar las transferencias.</td>
+                                    <td style="text-align: left;">Permiten transferencias automáticas y precisas.</td>
+                                    <td style="text-align: left;">Diseño más complejo del hardware del controlador.</td>
+                                </tr>
+                                <tr style="background-color: #d6d6d6; text-align: center;">
+                                    <td>Modos de Operación</td>
+                                    <td style="text-align: left;">Diversos modos como 'robo de ciclos' o 'ráfaga' ajustan el uso del bus según las necesidades.</td>
+                                    <td style="text-align: left;">Ofrecen flexibilidad para manejar diferentes volúmenes de datos.</td>
+                                    <td style="text-align: left;">El modo 'ráfaga' puede dejar a la CPU inactiva durante períodos prolongados.</td>
+                                </tr>
+                                <tr style="background-color: #f3f3f3; text-align: center;">
+                                    <td>Interrupción Final</td>
+                                    <td style="text-align: left;">El DMA genera una interrupción para notificar a la CPU al finalizar una operación.</td>
+                                    <td style="text-align: left;">Minimiza la supervisión de la CPU durante la transferencia.</td>
+                                    <td style="text-align: left;">Requiere un manejo eficiente de interrupciones en el sistema operativo.</td>
+                                </tr>
+                                <tr style="background-color: #d6d6d6; text-align: center;">
+                                    <td>Eficiencia en Grandes Transferencias</td>
+                                    <td style="text-align: left;">Es ideal para mover grandes volúmenes de datos entre memoria y dispositivos.</td>
+                                    <td style="text-align: left;">Incrementa significativamente el rendimiento del sistema.</td>
+                                    <td style="text-align: left;">No es práctico para transferencias pequeñas o esporádicas.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
 
                     <p class="card-text">En conclusión, el uso de DMA representa una solución eficiente para
                         transferencias de datos en sistemas modernos, al permitir que la CPU se enfoque en otras tareas

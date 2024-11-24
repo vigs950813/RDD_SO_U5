@@ -72,9 +72,9 @@
                         <strong>anidamiento</strong> para gestionar múltiples solicitudes simultáneas de interrupciones.
                     </p>
 
-                    <table class="table card-text">
+                    <table class="table card-text" style="width: 100%; border-collapse: collapse;">
                         <thead>
-                            <tr>
+                            <tr style="background-color: #797979; color: white; text-align: center;">
                                 <th>Aspecto</th>
                                 <th>Descripción</th>
                                 <th>Ventajas</th>
@@ -82,40 +82,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr style="background-color: #d6d6d6; text-align: center;">
                                 <td>Generación de Interrupciones</td>
-                                <td>Los dispositivos envían señales para indicar que están listos para operar.</td>
-                                <td>Elimina los tiempos muertos de la CPU.</td>
-                                <td>Requiere hardware adicional para gestionar señales.</td>
+                                <td style="text-align: left;">Los dispositivos envían señales para indicar que están listos para operar.</td>
+                                <td style="text-align: left;">Elimina los tiempos muertos de la CPU.</td>
+                                <td style="text-align: left;">Requiere hardware adicional para gestionar señales.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #f3f3f3; text-align: center;">
                                 <td>Rutina de Tratamiento</td>
-                                <td>Código específico que gestiona las operaciones de E/S asociadas a la interrupción.
-                                </td>
-                                <td>Facilita el manejo modular de dispositivos.</td>
-                                <td>Incrementa la complejidad de la programación.</td>
+                                <td style="text-align: left;">Código específico que gestiona las operaciones de E/S asociadas a la interrupción.</td>
+                                <td style="text-align: left;">Facilita el manejo modular de dispositivos.</td>
+                                <td style="text-align: left;">Incrementa la complejidad de la programación.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #d6d6d6; text-align: center;">
                                 <td>Enmascaramiento de Interrupciones</td>
-                                <td>Permite suprimir interrupciones de menor prioridad mientras se atiende una de mayor
-                                    prioridad.</td>
-                                <td>Evita conflictos entre interrupciones simultáneas.</td>
-                                <td>Puede retrasar la atención de interrupciones menos críticas.</td>
+                                <td style="text-align: left;">Permite suprimir interrupciones de menor prioridad mientras se atiende una de mayor prioridad.</td>
+                                <td style="text-align: left;">Evita conflictos entre interrupciones simultáneas.</td>
+                                <td style="text-align: left;">Puede retrasar la atención de interrupciones menos críticas.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #f3f3f3; text-align: center;">
                                 <td>Anidamiento de Interrupciones</td>
-                                <td>Capacidad de interrumpir una rutina de tratamiento con otra de mayor prioridad.</td>
-                                <td>Optimiza la utilización de los recursos del sistema.</td>
-                                <td>Aumenta la complejidad de la implementación.</td>
+                                <td style="text-align: left;">Capacidad de interrumpir una rutina de tratamiento con otra de mayor prioridad.</td>
+                                <td style="text-align: left;">Optimiza la utilización de los recursos del sistema.</td>
+                                <td style="text-align: left;">Aumenta la complejidad de la implementación.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #d6d6d6; text-align: center;">
                                 <td>Sistema de Prioridades</td>
-                                <td>Establece el orden de atención de interrupciones según su importancia.</td>
-                                <td>Garantiza que las tareas críticas se atiendan primero.</td>
-                                <td>El diseño puede ser complicado y difícil de ajustar.</td>
+                                <td style="text-align: left;">Establece el orden de atención de interrupciones según su importancia.</td>
+                                <td style="text-align: left;">Garantiza que las tareas críticas se atiendan primero.</td>
+                                <td style="text-align: left;">El diseño puede ser complicado y difícil de ajustar.</td>
                             </tr>
                         </tbody>
                     </table>
+                    
 
                     <p class="card-text">En resumen, la E/S manejada por interrupciones representa un avance
                         significativo sobre la E/S programada, ya que mejora la eficiencia del sistema y permite que el

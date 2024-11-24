@@ -82,36 +82,29 @@
                         copiar el bloque en la memoria; ya está ahí.</p>
 
                     <p class="card-text"><strong>Comparativa de los componentes y características del DMA:</strong></p>
-                    <table class="table card-text">
+                    <table class="table card-text" style="width: 100%; border-collapse: collapse;">
                         <thead>
-                            <tr>
+                            <tr style="background-color: #797979; color: white; text-align: center;">
                                 <th>Aspecto</th>
                                 <th>Características</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr style="background-color: #d6d6d6; text-align: center;">
                                 <td>Funcionamiento sin DMA</td>
-                                <td>La CPU realiza un ciclo programado para leer byte por byte desde el controlador del
-                                    dispositivo, lo que consume significativamente su tiempo. La CPU controla
-                                    directamente el flujo de datos entre el dispositivo y la memoria.</td>
+                                <td style="text-align: left;">La CPU realiza un ciclo programado para leer byte por byte desde el controlador del dispositivo, lo que consume significativamente su tiempo. La CPU controla directamente el flujo de datos entre el dispositivo y la memoria.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #f3f3f3; text-align: center;">
                                 <td>Funcionamiento con DMA</td>
-                                <td>El controlador de DMA realiza transferencias de bloques completos de datos de un
-                                    buffer interno a la memoria principal, liberando a la CPU. La CPU configura la
-                                    dirección inicial, el tamaño del bloque y permite que el DMA gestione el resto del
-                                    proceso.</td>
+                                <td style="text-align: left;">El controlador de DMA realiza transferencias de bloques completos de datos de un buffer interno a la memoria principal, liberando a la CPU. La CPU configura la dirección inicial, el tamaño del bloque y permite que el DMA gestione el resto del proceso.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #d6d6d6; text-align: center;">
                                 <td>Buffer interno</td>
-                                <td>Almacena temporalmente los datos provenientes del dispositivo para evitar pérdida si
-                                    el bus del sistema está ocupado. Evita que el controlador dependa críticamente del
-                                    tiempo para transferencias inmediatas a memoria.</td>
+                                <td style="text-align: left;">Almacena temporalmente los datos provenientes del dispositivo para evitar pérdida si el bus del sistema está ocupado. Evita que el controlador dependa críticamente del tiempo para transferencias inmediatas a memoria.</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #f3f3f3; text-align: center;">
                                 <td>Ventajas del DMA</td>
-                                <td>
+                                <td style="text-align: left;">
                                     <ol>
                                         <li>Reduce la carga en la CPU.</li>
                                         <li>Permite transferencias eficientes de grandes volúmenes de datos.</li>
@@ -119,26 +112,23 @@
                                     </ol>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #d6d6d6; text-align: center;">
                                 <td>Limitaciones del DMA</td>
-                                <td>
+                                <td style="text-align: left;">
                                     <ol>
                                         <li>Puede ser más lento que una CPU moderna en ciertos casos.</li>
                                         <li>Requiere un controlador especializado, incrementando el costo.</li>
-                                        <li>En sistemas donde la CPU es rápida y no está ocupada, la intervención del
-                                            DMA puede ser innecesaria.</li>
+                                        <li>En sistemas donde la CPU es rápida y no está ocupada, la intervención del DMA puede ser innecesaria.</li>
                                     </ol>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #f3f3f3; text-align: center;">
                                 <td>Problemas de rendimiento</td>
-                                <td>La transferencia intercalada puede causar que se pierdan sectores o bloques del
-                                    disco si el controlador no puede gestionar el flujo constante de datos. Requiere una
-                                    organización adecuada de los bloques para optimizar la velocidad de lectura y
-                                    escritura.</td>
+                                <td style="text-align: left;">La transferencia intercalada puede causar que se pierdan sectores o bloques del disco si el controlador no puede gestionar el flujo constante de datos. Requiere una organización adecuada de los bloques para optimizar la velocidad de lectura y escritura.</td>
                             </tr>
                         </tbody>
                     </table>
+                    
 
 
                     <ul class="pagination justify-content-end">

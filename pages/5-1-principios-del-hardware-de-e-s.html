@@ -91,54 +91,48 @@
               Control
               de Dispositivos de E/S</strong></p>
 
-          <table class="table card-text">
-            <thead>
-              <tr>
-                <th>Aspecto</th>
-                <th>Principios del Hardware de E/S</th>
-                <th>Funciones del Sistema Operativo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Interacción con dispositivos</td>
-                <td>Proveer mecanismos físicos para conectar dispositivos al sistema.</td>
-                <td>Enviar comandos a los dispositivos para iniciar y gestionar operaciones de E/S.</td>
-              </tr>
-              <tr>
-                <td>Manejo de interrupciones</td>
-                <td>Los dispositivos generan señales (interrupciones) al procesador para indicar que requieren atención.
-                </td>
-                <td>Detectar y manejar las interrupciones de manera eficiente para no sobrecargar al procesador.</td>
-              </tr>
-              <tr>
-                <td>Gestión de errores</td>
-                <td>Implementación de mecanismos en hardware para supervisar fallos (por ejemplo, detección de fallas en
-                  disco).</td>
-                <td>Controlar errores en operaciones de E/S y recuperar el sistema sin afectar otras tareas en
-                  ejecución.</td>
-              </tr>
-              <tr>
-                <td>Independencia del dispositivo</td>
-                <td>Diseñar interfaces de hardware compatibles con diversos periféricos.</td>
-                <td>Implementar una interfaz uniforme y abstracta que permita operar distintos dispositivos sin conocer
-                  sus detalles técnicos.</td>
-              </tr>
-              <tr>
-                <td>Eficiencia</td>
-                <td>Proporcionar métodos rápidos para transferir datos (por ejemplo, DMA, buses eficientes).</td>
-                <td>Optimizar el código de E/S para evitar cuellos de botella y mejorar la performance general del
-                  sistema.</td>
-              </tr>
-              <tr>
-                <td>Impacto en la performance</td>
-                <td>Los dispositivos de E/S más lentos pueden convertirse en puntos críticos para el rendimiento del
-                  sistema.</td>
-                <td>Administrar los dispositivos de E/S para minimizar el impacto de su uso inadecuado en la performance
-                  global del sistema.</td>
-              </tr>
-            </tbody>
-          </table>
+              <table class="table card-text" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: #797979; color: white; text-align: center;">
+                        <th>Aspecto</th>
+                        <th>Principios del Hardware de E/S</th>
+                        <th>Funciones del Sistema Operativo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #d6d6d6;">
+                        <td style="text-align: center;">Interacción con dispositivos</td>
+                        <td>Proveer mecanismos físicos para conectar dispositivos al sistema.</td>
+                        <td>Enviar comandos a los dispositivos para iniciar y gestionar operaciones de E/S.</td>
+                    </tr>
+                    <tr style="background-color: #f3f3f3;">
+                        <td style="text-align: center;">Manejo de interrupciones</td>
+                        <td>Los dispositivos generan señales (interrupciones) al procesador para indicar que requieren atención.</td>
+                        <td>Detectar y manejar las interrupciones de manera eficiente para no sobrecargar al procesador.</td>
+                    </tr>
+                    <tr style="background-color: #d6d6d6;">
+                        <td style="text-align: center;">Gestión de errores</td>
+                        <td>Implementación de mecanismos en hardware para supervisar fallos (por ejemplo, detección de fallas en disco).</td>
+                        <td>Controlar errores en operaciones de E/S y recuperar el sistema sin afectar otras tareas en ejecución.</td>
+                    </tr>
+                    <tr style="background-color: #f3f3f3;">
+                        <td style="text-align: center;">Independencia del dispositivo</td>
+                        <td>Diseñar interfaces de hardware compatibles con diversos periféricos.</td>
+                        <td>Implementar una interfaz uniforme y abstracta que permita operar distintos dispositivos sin conocer sus detalles técnicos.</td>
+                    </tr>
+                    <tr style="background-color: #d6d6d6;">
+                        <td style="text-align: center;">Eficiencia</td>
+                        <td>Proporcionar métodos rápidos para transferir datos (por ejemplo, DMA, buses eficientes).</td>
+                        <td>Optimizar el código de E/S para evitar cuellos de botella y mejorar la performance general del sistema.</td>
+                    </tr>
+                    <tr style="background-color: #f3f3f3;">
+                        <td style="text-align: center;">Impacto en la performance</td>
+                        <td>Los dispositivos de E/S más lentos pueden convertirse en puntos críticos para el rendimiento del sistema.</td>
+                        <td>Administrar los dispositivos de E/S para minimizar el impacto de su uso inadecuado en la performance global del sistema.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
 
 
           <p class="card-text"><strong>El Sistema de E/S en el Sistema Operativo</strong></p>

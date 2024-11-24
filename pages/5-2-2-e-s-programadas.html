@@ -70,50 +70,49 @@
                         botella debido a la alta dependencia de la CPU para manejar tareas de E/S, especialmente con
                         dispositivos más lentos como impresoras o discos duros mecánicos.</p>
 
-                    <table class="table card-text">
-                        <thead>
-                            <tr>
-                                <th>Aspecto</th>
-                                <th>Descripción</th>
-                                <th>Ventajas</th>
-                                <th>Desventajas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sincronización por programa</td>
-                                <td>La CPU consulta continuamente el estado del dispositivo mediante un bucle de
-                                    sincronización.</td>
-                                <td>Simplicidad en la lógica de control.</td>
-                                <td>Desperdicio de tiempo de CPU y recursos.</td>
-                            </tr>
-                            <tr>
-                                <td>Transferencia directa</td>
-                                <td>El procesador maneja directamente la transferencia de datos entre el dispositivo y
-                                    la memoria principal.</td>
-                                <td>No requiere hardware adicional como DMA.</td>
-                                <td>Requiere la intervención constante de la CPU, reduciendo la eficiencia.</td>
-                            </tr>
-                            <tr>
-                                <td>Ineficiencia de recursos</td>
-                                <td>La CPU permanece inactiva mientras espera la disponibilidad del dispositivo.</td>
-                                <td>Fácil de implementar en sistemas simples.</td>
-                                <td>Inadecuado para sistemas multitarea o dispositivos lentos.</td>
-                            </tr>
-                            <tr>
-                                <td>Adecuado para sistemas embebidos</td>
-                                <td>Utilizado en dispositivos simples donde la multitarea no es prioritaria.</td>
-                                <td>Ideal para controladores de hardware básico.</td>
-                                <td>No escalable en sistemas complejos con múltiples dispositivos.</td>
-                            </tr>
-                            <tr>
-                                <td>Ejemplo de implementación</td>
-                                <td>Un sistema que utiliza polling para verificar el estado de un puerto serial.</td>
-                                <td>Permite el control preciso del hardware.</td>
-                                <td>La CPU no puede realizar otras tareas durante el polling.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table class="table card-text" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #797979; color: white; text-align: center;">
+                                    <th>Aspecto</th>
+                                    <th>Descripción</th>
+                                    <th>Ventajas</th>
+                                    <th>Desventajas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #d6d6d6; text-align: center;">
+                                    <td>Sincronización por programa</td>
+                                    <td style="text-align: left;">La CPU consulta continuamente el estado del dispositivo mediante un bucle de sincronización.</td>
+                                    <td style="text-align: left;">Simplicidad en la lógica de control.</td>
+                                    <td style="text-align: left;">Desperdicio de tiempo de CPU y recursos.</td>
+                                </tr>
+                                <tr style="background-color: #f3f3f3; text-align: center;">
+                                    <td>Transferencia directa</td>
+                                    <td style="text-align: left;">El procesador maneja directamente la transferencia de datos entre el dispositivo y la memoria principal.</td>
+                                    <td style="text-align: left;">No requiere hardware adicional como DMA.</td>
+                                    <td style="text-align: left;">Requiere la intervención constante de la CPU, reduciendo la eficiencia.</td>
+                                </tr>
+                                <tr style="background-color: #d6d6d6; text-align: center;">
+                                    <td>Ineficiencia de recursos</td>
+                                    <td style="text-align: left;">La CPU permanece inactiva mientras espera la disponibilidad del dispositivo.</td>
+                                    <td style="text-align: left;">Fácil de implementar en sistemas simples.</td>
+                                    <td style="text-align: left;">Inadecuado para sistemas multitarea o dispositivos lentos.</td>
+                                </tr>
+                                <tr style="background-color: #f3f3f3; text-align: center;">
+                                    <td>Adecuado para sistemas embebidos</td>
+                                    <td style="text-align: left;">Utilizado en dispositivos simples donde la multitarea no es prioritaria.</td>
+                                    <td style="text-align: left;">Ideal para controladores de hardware básico.</td>
+                                    <td style="text-align: left;">No escalable en sistemas complejos con múltiples dispositivos.</td>
+                                </tr>
+                                <tr style="background-color: #d6d6d6; text-align: center;">
+                                    <td>Ejemplo de implementación</td>
+                                    <td style="text-align: left;">Un sistema que utiliza polling para verificar el estado de un puerto serial.</td>
+                                    <td style="text-align: left;">Permite el control preciso del hardware.</td>
+                                    <td style="text-align: left;">La CPU no puede realizar otras tareas durante el polling.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
 
                     <p class="card-text">Entre las ventajas de la E/S programada se destacan su simplicidad de
                         implementación y la ausencia de hardware adicional como controladores DMA. Sin embargo, presenta

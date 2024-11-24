@@ -104,55 +104,49 @@
                         software de más bajo nivel llamado controladores de dispositivos.</p>
 
                     <p class="card-text">Cuadro Comparativo: Dispositivos de Bloque vs. Dispositivos de Carácter</p>
-                    <table class="table">
+                    
+                    <table class="table" style="width: 100%; border-collapse: collapse;">
                         <thead>
-                            <tr>
-                                <th class="card-text">Aspecto</th>
-                                <th class="card-text">Dispositivos de Bloque</th>
-                                <th class="card-text">Dispositivos de Carácter</th>
+                            <tr style="background-color: #797979; color: white;">
+                                <th class="card-text" style="text-align: center;">Aspecto</th>
+                                <th class="card-text" style="text-align: center;">Dispositivos de Bloque</th>
+                                <th class="card-text" style="text-align: center;">Dispositivos de Carácter</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="card-text">Definición</td>
-                                <td class="card-text">La información se almacena en bloques de tamaño fijo, cada bloque
-                                    tiene una dirección.</td>
-                                <td class="card-text">La información se transfiere como un flujo continuo de caracteres,
-                                    sin estructura de bloques.</td>
+                            <tr style="background-color: #d6d6d6;">
+                                <td class="card-text" style="text-align: center;">Definición</td>
+                                <td class="card-text">La información se almacena en bloques de tamaño fijo, cada bloque tiene una dirección.</td>
+                                <td class="card-text">La información se transfiere como un flujo continuo de caracteres, sin estructura de bloques.</td>
                             </tr>
-                            <tr>
-                                <td class="card-text">Operación</td>
-                                <td class="card-text">Se puede leer o escribir en un bloque de forma independiente de
-                                    los demás, en cualquier momento.</td>
+                            <tr style="background-color: #f3f3f3;">
+                                <td class="card-text" style="text-align: center;">Operación</td>
+                                <td class="card-text">Se puede leer o escribir en un bloque de forma independiente de los demás, en cualquier momento.</td>
                                 <td class="card-text">No tienen operación de búsqueda y no utilizan direcciones.</td>
                             </tr>
-                            <tr>
-                                <td class="card-text">Tamaño</td>
-                                <td class="card-text">Los bloques típicos tienen tamaños que van de 128 bytes a 1,024
-                                    bytes.</td>
-                                <td class="card-text">No se manejan tamaños de bloques; los datos fluyen de forma
-                                    continua.</td>
+                            <tr style="background-color: #d6d6d6;">
+                                <td class="card-text" style="text-align: center;">Tamaño</td>
+                                <td class="card-text">Los bloques típicos tienen tamaños que van de 128 bytes a 1,024 bytes.</td>
+                                <td class="card-text">No se manejan tamaños de bloques; los datos fluyen de forma continua.</td>
                             </tr>
-                            <tr>
-                                <td class="card-text">Ejemplos típicos</td>
+                            <tr style="background-color: #f3f3f3;">
+                                <td class="card-text" style="text-align: center;">Ejemplos típicos</td>
                                 <td class="card-text">Discos duros, unidades SSD, y cintas DAT en ciertos usos.</td>
                                 <td class="card-text">Impresoras de línea, terminales, interfaces de red, ratones.</td>
                             </tr>
-                            <tr>
-                                <td class="card-text">Acceso</td>
-                                <td class="card-text">Direccional y direccionable por bloques, aunque algunos
-                                    dispositivos como cintas pueden no usarse como bloques.</td>
+                            <tr style="background-color: #d6d6d6;">
+                                <td class="card-text" style="text-align: center;">Acceso</td>
+                                <td class="card-text">Direccional y direccionable por bloques, aunque algunos dispositivos como cintas pueden no usarse como bloques.</td>
                                 <td class="card-text">Acceso secuencial sin direccionamiento.</td>
                             </tr>
-                            <tr>
-                                <td class="card-text">Excepciones</td>
-                                <td class="card-text">Algunos dispositivos pueden tener características mixtas, como las
-                                    cintas usadas en respaldos.</td>
-                                <td class="card-text">Relojes y pantallas mapeadas en memoria no encajan perfectamente
-                                    en este modelo.</td>
+                            <tr style="background-color: #f3f3f3;">
+                                <td class="card-text" style="text-align: center;">Excepciones</td>
+                                <td class="card-text">Algunos dispositivos pueden tener características mixtas, como las cintas usadas en respaldos.</td>
+                                <td class="card-text">Relojes y pantallas mapeadas en memoria no encajan perfectamente en este modelo.</td>
                             </tr>
                         </tbody>
                     </table>
+                    
 
                     <p class="card-text">También, existe otro tipo de clasificación, dependiendo de su interacción con
                         su entorno. Los dispositivos externos que tienen que hacer E/S con las computadoras pueden
